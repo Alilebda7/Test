@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <meta name="description" content="A detailed developer's website" />
+    <meta name="author" content="Ali Mahmoud">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="---" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/scrollbar.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Quranic Verse of the Day</h1>
+            <div id="gregorian"></div> <!--Gregorian clander-->
+            <div id="hijri"></div>     <!--Hijri clander-->
+                <button>Favorites</button>
+        </nav>
+    </header>
+    <!--Main card-->
+    <main>
+        <section id="verse-of-the-day">
+            <h1>Verse of the Day</h2>
+            <div id="verse-content"></div>    <!--The div which the api will add the verse to it-->
+            <div id="verse-reference"></div>  <!--The div which the api will add the transelation to it-->
+        </section>
+                <!--copy button-->
+                    <div class="Copy-Button">
+                    <button id="copy-button">Copy Verse</button>
+                    <!--Favourite button-->
+                        <button id="favourite-button">
+                            <i class="fa-regular fa-heart"> Favorite</i>
+                        </button>
+                </div>
+</body>
+<script src="index.js"></script>
+</html>

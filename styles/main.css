@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap');
+@font-face {
+    font-family: 'KFGQPC-Hafs';
+    src: url('fonts/KFGQPC-Hafs.woff2') format('woff2');
+}
+
+/* Above is font related stuff */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #05000f;
+    margin: 0;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #e7e7e7 #05000f; 
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Favorites button */
+header nav button {
+    background-color: #05000f;
+    color: #e7e7e7;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+header nav button {
+    position: relative;
+    overflow: hidden;
+}
+
+header nav button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0;
+    height: 2px;
+    background: #02c453;
+    transition: width 0.3s ease;
+}
+
+header nav button:hover::after {
+    width: 100%;
+}
+/* the header */
+header nav h1 {
+    color: #e7e7e7;
+    text-align: center;
+}
+header nav .Gregorian-calender {
+    color: #5f5f5f;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 0;
+}
+
+header nav .Hijri-calender {
+    color: #5f5f5f;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(8, 1, 20, 0.6); /* semi-transparent */
+    background-image: url(../islamBG.png);
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(8px); /* blur effect */
+    backdrop-filter: blur(8px); /* Safari support */
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+main h1{
+    color: #e7e7e7;
+    margin-top: 0;
+}
+
+main .verse {
+    direction: rtl;
+    text-align: right;
+    color: #9b9292;
+    margin: 5px 0 0 10px;
+    font-family: 'KFGQPC-Hafs', serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 10px;
+}
+
+main .transelation {
+    direction: ltr;
+    text-align: left;
+    color: #e7e7e7;
+    margin: 5px 10px 0 0;
+}
+
+main .verse-number {
+    color: #e7e7e7;
+    font-weight: bold;
+}
