@@ -2,18 +2,20 @@ const today = new Date();
 const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
 const ayahNumber = (dayOfYear % 6236) + 1;
 
+// FIXME: There is a little bug here, it gives ayahs in orders like one day is was (2:142) and the next day it was (2:143)
 fetch(`https://api.alquran.cloud/v1/ayah/${ayahNumber}/editions/ar.alafasy,en.sahih`)
     .then(res => res.json())
     .then(data => {
         const arabic = data.data[0].text;
         const english = data.data[1].text;
-        const surahNumber = data.data[0].surah.number;
-        const ayahNum = data.data[0].numberInSurah;
+        window.surahNumber = data.data[0].surah.number;
+        window.ayahNum = data.data[0].numberInSurah;
         document.getElementById('verse-content').innerHTML = `
             <h2 class="verse">${arabic}</h2>
             <p class="transelation">${english}</p>
             <p class="verse-number">(${surahNumber}:${ayahNum})</p>
         `;
+        if (window.updateHeartIcon) window.updateHeartIcon(); // update heart after verse loads
     });
 
 // Gregorian calendar 
@@ -59,3 +61,7 @@ function copyVerse(){
 
 
 // Favourite button functionality
+const favouriteButton = document.getElementById('favourite-button');
+const heartIcon = document.querySelector('.fa-heart');
+
+

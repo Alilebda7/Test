@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/scrollbar.css">
+    <link rel="stylesheet" href="styles/favorite.css">
     
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -28,19 +29,28 @@
     </header>
     <!--Main card-->
     <main>
+        <h1>Verse of the Day</h2>
         <section id="verse-of-the-day">
-            <h1>Verse of the Day</h2>
             <div id="verse-content"></div>    <!--The div which the api will add the verse to it-->
-            <div id="verse-reference"></div>  <!--The div which the api will add the transelation to it-->
         </section>
                 <!--copy button-->
                     <div class="Copy-Button">
                     <button id="copy-button">Copy Verse</button>
+                    </div>
                     <!--Favourite button-->
                         <button id="favourite-button">
-                            <i class="fa-regular fa-heart"> Favorite</i>
+                            <i class="fa-regular fa-heart"></i> Favorite
                         </button>
-                </div>
+
+</main>
+    <!--Favourites Section-->
+    <section id="favourites-section" class="favourites-section">
+        <details id="favoritesViewer" class="favoritesViewer">
+            <summary>Favourites</summary>
+            <ul id="favoritesList"><!--Favourites will be stored here based on local storage--></ul>
+        </details>
+    </section>
 </body>
 <script src="index.js"></script>
+<script src="favorites.js"></script>
 </html>
